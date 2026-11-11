@@ -139,6 +139,34 @@ The combination of its engine characteristics, rear-wheel-drive layout and every
 
 <div id="chart_div" style="width: 800px; height: 400px;"></div>
     
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Model', 'Horsepower'],
+        ['W204 C63 AMG', 451],
+        ['W205 C63 AMG', 469],
+        ['W206 C63 S E Performance', 671]
+    ]);
+
+    var options = {
+        title: 'Mercedes C63 AMG Horsepower Comparison',
+        hAxis: {title: 'Horsepower (hp)'},
+        vAxis: {title: 'Mercedes Model'},
+        legend: 'none',
+        colors: ['#3366cc']
+    };
+
+    var chart = new google.visualization.BarChart(
+        document.getElementById('chart_div')
+    );
+
+    chart.draw(data, options);
+}
+</script>
+    
 <h3 id="Conclusion">Conclusion</h3>
 
 <div style="max-width:900px; line-height:1.6; text-align:justify;">
