@@ -227,4 +227,16 @@ Yousuf Ashraf and John Barker (2023). <i>Mercedes-AMG C63</i>. [online] Availabl
 <hr>
    
 </body>
+    <button id="colorButton">Click to change colour</button>
+    <script>
+var button = document.getElementById("colorButton");
+
+function changeColor() {
+    var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    button.style.backgroundColor = randomColor;
+}
+
+button.addEventListener("click", changeColor);
+</script>
+
 </html>
